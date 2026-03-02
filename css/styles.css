@@ -1,0 +1,338 @@
+/* ==========================================================================
+   Caroline Barrueco — Portfolio
+   ========================================================================== */
+
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base — Cargo uses 10px root for rem calculations */
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.85);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+h2 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+h3 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  font-weight: 300;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+small {
+  display: inline-block;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+small small {
+  font-size: 1.2rem;
+}
+
+i, em {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: rgba(0, 0, 0, 0.85);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: rgba(255, 0, 0, 0.85);
+}
+
+a:active {
+  opacity: 0.7;
+}
+
+h3 a {
+  color: rgba(3, 8, 169, 0.85);
+}
+
+h3 a small {
+  color: rgba(3, 8, 169, 0.85);
+}
+
+/* Horizontal Rule */
+hr {
+  background: rgba(0, 0, 0, 0.76);
+  border: 0;
+  height: 1px;
+  display: block;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Containers */
+.container {
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+  padding: 4.8rem;
+}
+
+.container--narrow {
+  width: 40%;
+}
+
+.container--wide {
+  width: 61%;
+}
+
+/* Two Column Grid */
+.two-col {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+
+.two-col > .col {
+  flex: 0 0 50%;
+  padding: 1rem;
+}
+
+.two-col--tight {
+  margin: 0 -0.5rem;
+}
+
+.two-col--tight > .col {
+  padding: 0.5rem;
+}
+
+/* Project list (full width) */
+.project-list {
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.section--hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background-color: #000;
+}
+
+.section--hero .container {
+  padding-top: 1.5rem;
+  padding-bottom: 4.8rem;
+}
+
+/* Video Background */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.video-background iframe,
+#yt-player {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100vh;
+  min-width: 177.78vh; /* 16:9 */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(204, 170, 255, 0.72);
+  z-index: 1;
+}
+
+/* Text highlight on hero */
+.text-highlight {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+/* ==========================================================================
+   Work Section
+   ========================================================================== */
+
+.section--work {
+  position: relative;
+  background-color: #000;
+}
+
+/* Ripple Background */
+.ripple-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url('../assets/ripple-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Video noise overlay */
+.video-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/noise.png');
+  background-repeat: repeat;
+  background-size: 512px 512px;
+  opacity: 0.05;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Contact / Footer Section
+   ========================================================================== */
+
+.section--contact {
+  background-color: rgb(212, 223, 255);
+}
+
+.section--contact .container {
+  padding-top: 2.4rem;
+  padding-bottom: 4.8rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .container--narrow {
+    width: 55%;
+  }
+
+  .container--wide {
+    width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 9px;
+  }
+
+  .container--narrow,
+  .container--wide {
+    width: 100%;
+    padding: 2.4rem;
+  }
+
+  .two-col > .col {
+    flex: 0 0 100%;
+  }
+
+  .section--hero {
+    min-height: 80vh;
+  }
+
+  h1, h2 {
+    font-size: 2.8rem;
+  }
+
+  /* Video: show static fallback on mobile */
+  .video-background.mobile-fallback #yt-player,
+  .video-background.mobile-fallback iframe {
+    display: none;
+  }
+
+  .video-background.mobile-fallback .video-overlay {
+    background: linear-gradient(135deg, rgba(204, 170, 255, 0.85), rgba(180, 150, 230, 0.95));
+  }
+}
+
+@media (max-width: 480px) {
+  .container--narrow,
+  .container--wide {
+    padding: 1.6rem;
+  }
+
+  h1, h2 {
+    font-size: 2.4rem;
+  }
+
+  body {
+    font-size: 1.6rem;
+  }
+
+  small {
+    font-size: 1.3rem;
+  }
+}
